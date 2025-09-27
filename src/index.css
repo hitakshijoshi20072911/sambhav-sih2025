@@ -1,0 +1,508 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Healthcare Companion Design System - Inspired by modern UI patterns */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 120 20% 95%; /* sage/cream */
+    --foreground: 160 31% 20%; /* deep green */
+
+    /* Healthcare theme - Soothing Medical Green */
+    --healthcare-primary: 160 31% 51%; /* #5a8f7b */
+    --healthcare-primary-light: 160 31% 71%;
+    --healthcare-primary-dark: 160 31% 41%;
+    
+    --womens-health-primary: 326 91% 71%; /* Pari pink */
+    --womens-health-light: 326 71% 81%;
+    --womens-health-dark: 326 91% 61%;
+
+    /* Card system */
+    --card: 120 20% 98%;
+    --card-foreground: 160 31% 20%;
+    --card-hover: 210 17% 98%;
+
+    /* Interactive elements */
+    --primary: 160 31% 51%; /* #5a8f7b soothing medical green */
+    --primary-foreground: 120 20% 95%;
+    --primary-hover: 160 31% 46%;
+
+    --secondary: 60 40% 92%; /* light beige */
+    --secondary-foreground: 160 31% 20%;
+    --secondary-hover: 210 17% 91%;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --muted: 210 17% 96%;
+    --muted-foreground: 210 11% 46%;
+    
+    --accent: 45 80% 60%; /* golden */
+    --accent-foreground: 120 20% 95%;
+    
+    --border: 160 31% 80%;
+    --input: 160 31% 80%;
+    --ring: 160 31% 51%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #e6f2e6 0%, #f8f5e3 100%);
+    --gradient-womens: linear-gradient(135deg, hsl(326 91% 71%), hsl(326 71% 81%));
+    --gradient-hero: linear-gradient(45deg, #f8f5e3 0%, #e6f2e6 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-healthcare: 0 10px 30px -10px #5a8f7b44;
+    --shadow-womens: 0 10px 30px -10px #e5737344;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+
+  .dark {
+    --background: 210 22% 8%;
+    --foreground: 210 17% 96%;
+
+    --card: 210 22% 10%;
+    --card-foreground: 210 17% 96%;
+    --card-hover: 210 22% 12%;
+
+    --primary: 157 78% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 157 78% 52%;
+
+    --secondary: 210 22% 15%;
+    --secondary-foreground: 210 17% 96%;
+    --secondary-hover: 210 22% 18%;
+
+    --muted: 210 22% 15%;
+    --muted-foreground: 210 11% 65%;
+
+    --accent: 210 22% 15%;
+    --accent-foreground: 210 17% 96%;
+
+    --border: 210 22% 20%;
+    --input: 210 22% 20%;
+    --ring: 157 78% 47%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210 22% 12%), hsl(210 22% 10%));
+    --shadow-healthcare: 0 10px 30px -10px hsl(157 78% 47% / 0.4);
+    --shadow-womens: 0 10px 30px -10px hsl(326 91% 71% / 0.4);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  body {
+    background: #B7E39A !important;
+    background-size: initial;
+    background-position: initial;
+    background-attachment: initial;
+    background-repeat: initial;
+    position: relative;
+    filter: none;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/ayurveda-background-new.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(245, 255, 240, 0.85); /* soft cream/beige with a hint of green */
+    backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(90, 143, 123, 0.18);
+    box-shadow: 0 8px 32px rgba(90, 143, 123, 0.10);
+    color: #5a8f7b !important;
+  }
+
+  /* Floating animations */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Static role cards with subtle hover effects */
+  .role-card {
+    @apply transition-all duration-300;
+    transform: none;
+    animation: none;
+  }
+
+  .role-card:hover {
+    box-shadow: 0 10px 30px rgba(90, 143, 123, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-womens {
+    background: var(--gradient-womens);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Interactive elements */
+  .interactive {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  /* Pulse animation for important elements */
+  .pulse-healthcare {
+    animation: pulse-healthcare 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-healthcare {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(160 31% 51% / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px hsl(160 31% 51% / 0);
+    }
+  }
+
+  /* 3D Background with Animated Geometric Elements */
+  .animated-bg {
+    background: #B7E39A !important;
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  .animated-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 15% 15%, rgba(183,227,154,0.22) 0%, transparent 40%),
+      radial-gradient(circle at 85% 25%, rgba(183,227,154,0.18) 0%, transparent 35%),
+      radial-gradient(circle at 25% 75%, rgba(183,227,154,0.24) 0%, transparent 45%),
+      radial-gradient(circle at 75% 85%, rgba(183,227,154,0.16) 0%, transparent 30%);
+    animation: float3D 25s ease-in-out infinite;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .animated-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(45deg, transparent 30%, rgba(183,227,154,0.28) 50%, transparent 70%),
+      linear-gradient(-45deg, transparent 40%, rgba(183,227,154,0.18) 60%, transparent 80%);
+    animation: waveMotion 30s ease-in-out infinite;
+    transform-style: preserve-3d;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* 3D Depth Animation Keyframes */
+  @keyframes float3D {
+    0%, 100% { 
+      opacity: 0.8; 
+      transform: translateZ(0) scale(1) rotate(0deg); 
+    }
+    25% { 
+      opacity: 1; 
+      transform: translateZ(10px) scale(1.1) rotate(90deg); 
+    }
+    50% { 
+      opacity: 0.9; 
+      transform: translateZ(20px) scale(0.95) rotate(180deg); 
+    }
+    75% { 
+      opacity: 1; 
+      transform: translateZ(15px) scale(1.05) rotate(270deg); 
+    }
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 30%; }
+    50% { background-position: 100% 70%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes waveMotion {
+    0%, 100% { 
+      transform: translateX(-100%) translateY(-50%) rotateX(0deg) rotateY(0deg); 
+    }
+    25% { 
+      transform: translateX(0%) translateY(-25%) rotateX(15deg) rotateY(45deg); 
+    }
+    50% { 
+      transform: translateX(100%) translateY(0%) rotateX(0deg) rotateY(90deg); 
+    }
+    75% { 
+      transform: translateX(50%) translateY(-75%) rotateX(-15deg) rotateY(135deg); 
+    }
+  }
+
+  /* Floating Logo Watermark */
+  .floating-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatingWatermark 20s ease-in-out infinite;
+    max-width: 200px;
+    width: 15vw;
+    min-width: 120px;
+  }
+
+  @keyframes floatingWatermark {
+    0%, 100% { 
+      transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+      opacity: 0.12; 
+    }
+    25% { 
+      transform: translate(-45%, -55%) scale(1.05) rotate(2deg); 
+      opacity: 0.15; 
+    }
+    50% { 
+      transform: translate(-55%, -45%) scale(0.95) rotate(0deg); 
+      opacity: 0.10; 
+    }
+    75% { 
+      transform: translate(-50%, -50%) scale(1.02) rotate(-2deg); 
+      opacity: 0.14; 
+    }
+  }
+
+  .medical-gradient {
+    background: linear-gradient(135deg, #5a8f7b 0%, #667eea 100%);
+    background-size: 200% 200%;
+    animation: medicalFloat 20s ease-in-out infinite;
+  }
+
+  @keyframes medicalFloat {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Enhanced floating animations */
+  .float-gentle {
+    animation: floatGentle 8s ease-in-out infinite;
+  }
+
+  @keyframes floatGentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(1deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    75% { transform: translateY(-8px) rotate(-1deg); }
+  }
+
+  /* Floating feature cards */
+  .feature-card {
+    @apply transition-all duration-500 hover:scale-105;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  .feature-card:nth-child(2) {
+    animation-delay: 2s;
+  }
+
+  .feature-card:nth-child(3) {
+    animation-delay: 4s;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Emergency button enhancement */
+  .emergency-btn {
+    @apply bg-red-600 text-black font-bold text-lg px-8 py-4 rounded-xl;
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+    animation: emergencyPulse 2s ease-in-out infinite;
+    border: 3px solid #000;
+  }
+
+  @keyframes emergencyPulse {
+    0%, 100% { 
+      box-shadow: 0 0 30px rgba(220, 38, 38, 0.5), 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    50% { 
+      box-shadow: 0 0 50px rgba(220, 38, 38, 0.8), 0 0 0 15px rgba(220, 38, 38, 0);
+    }
+  }
+
+  /* Watermark styles */
+  .watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+    animation: watermarkFloat 15s ease-in-out infinite;
+  }
+
+  @keyframes watermarkFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+  }
+
+  /* Enhanced text readability with high contrast */
+  .enhanced-text {
+    text-shadow: 0 3px 6px rgba(90, 143, 123, 0.3);
+    color: #5a8f7b !important;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .enhanced-dark-text {
+    color: rgba(0, 0, 0, 0.95);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Improved readability for body text */
+  .readable-text {
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+
+  /* High contrast for feature cards */
+  .feature-text {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+}
+
+/* Large animated Sambhav logo watermark */
+.sambhav-watermark {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+  width: 60vw;
+  min-width: 300px;
+  max-width: 900px;
+  animation: watermarkFloat 30s ease-in-out infinite;
+}
+@keyframes watermarkFloat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  50% { transform: translate(-48%, -52%) scale(1.04) rotate(2deg); }
+}
+
+.glass, .enhanced-text, .glass * {
+  color: #5a8f7b !important;
+  font-family: 'Times New Roman', serif !important;
+}
